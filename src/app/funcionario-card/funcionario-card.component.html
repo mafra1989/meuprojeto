@@ -1,0 +1,8 @@
+<div class="card" [ngStyle]="getEstilosCartao()"><!-- [ngStyle]="{ 'background-color': 'red' }" -->
+  <img src="https://randomuser.me/api/portraits/men/{{f.id}}.jpg" class="card-img-top" alt="Card imagem cap">
+  <div class="card-body">
+    <div class="card-text">
+        <span class="badge" [ngClass]="{ 'text-bg-primary': isAdmin(), 'text-bg-danger': !isAdmin() }">{{f.nome}}</span><!-- [ngClass]="['badge', 'text-bg-secondary']" -->
+    </div>
+  </div>
+</div>
