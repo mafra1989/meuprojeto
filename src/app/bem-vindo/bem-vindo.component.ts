@@ -22,6 +22,8 @@ export class BemVindoComponent {
 
     this.cliente.nome = form.value.nome;
     this.cliente.profissao = form.value.profissao;
+
+    form.reset();
   }
 
 }

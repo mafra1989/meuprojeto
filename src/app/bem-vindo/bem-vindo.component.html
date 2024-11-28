@@ -1,19 +1,32 @@
+
+<div class="alert alert-danger" *ngIf="dadosForm.invalid && dadosForm.touched">
+  Preencha todos os campos
+</div>
+
 <form #dadosForm="ngForm" (ngSubmit)="submit(dadosForm)">
 
   <div class="form-group">
     <label class="form-label">Nome</label>
-    <input type="text" class="form-control" name="nome" [(ngModel)]="cliente.nome"/>
+    <input type="text" class="form-control" name="nome" [(ngModel)]="cliente.nome" required minlength="3" #nome="ngModel"/>
+
+    <div *ngIf="nome.hasError('required') && nome.touched">Campo nome deve ser informado</div>
+    <div *ngIf="nome.hasError('minlength') && nome.touched">Campo nome deve ter no mínimo 3 caracteres</div>
   </div>
+
+  <br/>
 
   <div class="form-group">
     <label class="form-label">Profissão</label>
-    <select class="form-control" name="profissao" ngModel>
+    <select class="form-control" name="profissao" ngModel required #profissao="ngModel">
       <option value="">Selecione</option>
       <option [value]="profissao" *ngFor="let profissao of profissoes">{{profissao}}</option>
     </select>
+    <div *ngIf="profissao.hasError('required') && profissao.touched">Campo profissao deve ser informado</div>
   </div>
 
   <input class="btn btn-primary" type="submit">
+
+  <br/>
 
   {{cliente | json}}
 </form>
