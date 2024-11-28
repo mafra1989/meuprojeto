@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-bem-vindo',
@@ -6,5 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bem-vindo.component.css']
 })
 export class BemVindoComponent {
+
+  submit(event: NgForm) {
+    console.log(event.form.value.nome)
+  }
 
 }

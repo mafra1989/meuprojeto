@@ -1,1 +1,5 @@
-<p>bem-vindo works!</p>
+<form #dadosForm="ngForm" (ngSubmit)="submit(dadosForm)">
+  <label>Nome</label>
+  <input type="text" name="nome" ngModel/>
+  <input type="submit">
+</form>
