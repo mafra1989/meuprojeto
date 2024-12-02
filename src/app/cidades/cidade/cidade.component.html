@@ -1,0 +1,33 @@
+<div class="mb-3">
+  <label class="form-label">Cidade</label>
+  <input type="text" class="form-control" ngModel #nome="ngModel">
+</div>
+
+<button type="button" class="btn btn-primary"
+    (click)="adicionar(nome.value);">Adicionar</button>
+
+<br/><br/>
+
+<div class="col-12">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of cidades">
+        <th>{{c.id}}</th>
+        <td><input type="text" class="form-control" [(ngModel)]="c.nome"></td>
+        <td>
+          <button class="btn btn-primary" (click)="atualizar(c)">Atualizar</button>
+          <button class="btn btn-danger" (click)="excluir(c.id)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

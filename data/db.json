@@ -1,0 +1,12 @@
+{
+  "cidades": [
+    {
+      "nome": "Uberlândia",
+      "id": 1
+    },
+    {
+      "nome": "Belo Horizonte",
+      "id": 3
+    }
+  ]
+}

@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.componente';
 import { BemVindoComponent } from './bem-vindo/bem-vindo.component';
-import { FormsModule } from '@angular/forms';
-import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
-import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
-import { CampoColoridoDirective } from './campo-colorido.directive';
+import { FuncionariosModule } from './funcionarios/funcionarios.module';
+import { CidadesModule } from './cidades/cidades.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+
     HelloComponent,
-    BemVindoComponent,
-    FuncionarioCardComponent,
-    FuncionarioFormComponent,
-    CampoColoridoDirective
+    BemVindoComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    HttpClientModule,
+
+    FuncionariosModule,
+    CidadesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
